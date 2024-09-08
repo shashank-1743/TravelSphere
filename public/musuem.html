@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="musuem.css">
+   
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">ArtBotTick</h1>
+            <nav class="navbar">
+                <a href="#" class="btn outline">Get started</a>
+                <a href="#" class="btn solid">Access account</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Museum Page -->
+    <section class="museum-page">
+        <!-- Slider Section -->
+        <div class="museum-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./photos/victoria3.jpg" alt="Victoria Memorial Image 1"></div>
+                    <div class="swiper-slide"><img src="./photos/victoria2.jpg" alt="Victoria Memorial Image 2"></div>
+                    <div class="swiper-slide"><img src="./photos/victoria1.jpg" alt="Victoria Memorial Image 3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="museum-intro">
+            <h2>Welcome to <span class="highlight">Victoria Memorial</span></h2>
+            <p><b>The Victoria Memorial</b>, located in Kolkata, India, is a majestic marble monument dedicated to Queen Victoria. Completed in 1921, it stands as a splendid example of British colonial architecture, blending elements of Indian, Mughal, and European styles. Surrounded by lush gardens and a serene lake, the memorial houses a museum and art gallery showcasing a rich collection of artifacts, paintings, and sculptures from the British era. As one of Kolkata's most iconic landmarks, it offers visitors a glimpse into the grandeur of colonial history and remains a popular destination for tourists and history enthusiasts alike.</p>
+        </div>
+
+<!-- Features Section -->
+<div class="museum-features">
+    <h3>Features</h3>
+    <ul>
+        <li>
+            <strong>Central Dome:</strong> The central dome of the memorial is 56 meters high and is adorned with a bronze statue of Queen Victoria.
+        </li>
+        <li>
+            <strong>Gardens:</strong> The memorial is surrounded by sprawling gardens and a large artificial lake, providing a scenic and tranquil environment.
+        </li>
+        <li>
+            <strong>Museum and Art Gallery:</strong> The interior of the memorial houses a museum and art gallery with a collection of paintings, sculptures, and historical artifacts from the British era.
+        </li>
+    </ul>
+</div>
+
+        <!-- Details Section -->
+        <div class="museum-details">
+            <h3>Details</h3>
+            <div class="details-item">
+                <span class="details-title">Location:</span>
+                <span class="details-info">
+                    <a href="https://www.google.com/maps?q=Victoria+Memorial,+Kolkata&ll=22.5446,88.3461&z=15&output=classic&daddr=22.5446,88.3461+(Victoria+Memorial)" target="_blank" title="View on Google Maps">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" alt="Location Icon" class="location-icon">
+                    </a>
+                    <span>Victoria Memorial, 1, Queen's Way, Kolkata, West Bengal, India</span>
+                </span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Entry Time:</span>
+                <span class="details-info">10 AM - 6 PM</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Entry Fee:</span>
+                <span class="details-info">₹50</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Nearby Attractions:</span>
+                <span class="details-info">Indian Museum, Howrah Bridge, Marble Palace</span>
+            </div>
+            <div class="details-item">
+                <span class="details-title">Shows:</span>
+                <span class="details-info">Light and Sound Show, Historical Exhibitions</span>
+            </div>
+            <button class="btn-book " onclick="window.location.replace('/payment')">Book Ticket</button>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <div class="floating-btn" onclick="toggleChatbox()">
+        <img src="chatbot.png" alt="Chat Icon">
+    </div>
+
+    <!-- Chatbox -->
+    <div class="chatbox" id="chatbox">
+        <p>Hi, how can I help you?</p>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+
+        function toggleChatbox() {
+            var chatbox = document.getElementById('chatbox');
+            if (chatbox.classList.contains('open')) {
+                chatbox.classList.remove('open');
+            } else {
+                chatbox.classList.add('open');
+            }
+        }
+
+        // Show initial message
+        window.onload = function() {
+            var chatbox = document.getElementById('chatbox');
+            chatbox.classList.add('open');
+        };
+    </script>
+</body>
+</html>
